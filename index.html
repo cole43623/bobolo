@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrale</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            margin-top: 20px;
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="mainImage" src="int.webp" >
+        <input type="text" id="responseInput" placeholder="Scrivi il risultato fino al decimo decimale...">
+        <button id="submitButton">Invia</button>
+        <p id="responseOutput"></p>
+    </div>
+    <script>
+			function bobolo(evenChars, oddChars) {
+			let combined = '';
+			let maxLength = Math.max(evenChars.length, oddChars.length);
+
+			for (let i = 0; i < maxLength; i++) {
+				if (i < evenChars.length) {
+					combined += evenChars[i];
+				}
+				if (i < oddChars.length) {
+					combined += oddChars[i];
+				}
+			}
+
+			return combined;
+		}
+			function mimmi(str,FT) {
+			return str.replace(/[A-Za-z]/g, function(c) {
+				const base = c < 'a' ? 65 : 97;
+				return String.fromCharCode((c.charCodeAt(0) - base + FT) % 26 + base);
+			});
+		}
+		function strangeRecursiveFunction(n, memo = {})
+		{
+			if (n === 0) {
+				return 1;
+			}
+			if (n === 1) {
+				return 2;
+			}
+			if (n === 2) {
+				return 4;
+			}
+			if (memo[n] !== undefined) {
+				return memo[n];
+			}
+			const MOD = 1000000007-n;
+			const result = (strangeRecursiveFunction(n - 1, memo) * strangeRecursiveFunction(n - 2, memo)
+							+ strangeRecursiveFunction(n - 3, memo)) % MOD;
+			memo[n] = result;
+			return result;
+		}
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var userResponse = document.getElementById('responseInput').value;
+            if (userResponse.trim() !== '') {
+			console.log(mimmi('uggcf://jjj.lbhghor.pbz/',13)+""+mimmi('rvoxc?q=b9jhRWt29LT',5));
+					if (parseFloat(userResponse.trim().replace(/,/g, '.'))*10000000000-4783724538==10*(strangeRecursiveFunction(strangeRecursiveFunction(3))))window.location.href = bobolo(mimmi('ugf/jjlhhrpzjguitbJl9L',13),mimmi('ok:/r.jow.j/vx?=9hW2L',5));
+					else document.getElementById('responseOutput').textContent = 'Risposta errata';
+            } else {
+                alert('Per favore, inserisci una risposta.');
+            }
+        });
+    </script>
+</body>
+</html>
